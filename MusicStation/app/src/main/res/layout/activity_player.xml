@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:keepScreenOn="true"
+    android:background="@color/main_background">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:background="@color/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/splashAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="false"
+        app:lottie_progress="53"
+        app:lottie_rawRes="@raw/splash_animation" />
+
+    <com.gauravk.audiovisualizer.visualizer.CircleLineVisualizer
+        android:id="@+id/blastVisualizer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:avDensity="0.8"
+        custom:avType="fill"
+        custom:avColor="@color/light_red"
+        custom:avSpeed="normal"/>
+
+    <ImageView
+        android:id="@+id/imgOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@android:color/black" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLoader"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/colorPrimaryDark"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <RelativeLayout
+        android:id="@+id/rlContentLayout"
+        android:layout_centerInParent="true"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:id="@+id/txtSongName"
+            style="@style/TextViewStyle"
+            android:textSize="@dimen/title_text_size"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/imgIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtArtistName"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtSongName"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/artist_text_size" />
+
+        <TextView
+            android:id="@+id/txtCategoryName"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtArtistName"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/category_text_size" />
+
+        <ImageButton
+            android:id="@+id/btnPlayPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:focusable="true"
+            android:src="@drawable/lb_ic_play"
+            android:background="@drawable/ui_selector_bg"
+            android:layout_below="@+id/txtCategoryName" />
+
+        <SeekBar
+            android:id="@+id/seekBarAudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnPlayPause"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ui_selector_bg"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white"
+            android:colorControlActivated="@color/white"
+            android:focusable="true"/>
+
+
+        <TextView
+            android:id="@+id/txtTotalDuration"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seekBarAudio"
+            android:layout_alignEnd="@+id/seekBarAudio"
+            android:layout_marginTop="5dp"
+            android:text=" / -"
+            android:textSize="@dimen/time_text_size" />
+
+        <TextView
+            android:id="@+id/txtCurrentTime"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seekBarAudio"
+            android:layout_toStartOf="@+id/txtTotalDuration"
+            android:layout_marginTop="5dp"
+            android:text="-"
+            android:textSize="@dimen/time_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlErrorLayout"
+        android:background="@color/background"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgErrorLoading"
+                android:src="@drawable/lb_ic_sad_cloud"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtError"
+                style="@style/TextViewStyle"
+                android:layout_centerHorizontal="true"
+                android:text="@string/error_message"
+                android:layout_below="@+id/imgErrorLoading"
+                android:textSize="@dimen/time_text_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnDismiss"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/txtError"
+                android:layout_centerHorizontal="true"
+                android:text="@string/dismiss_error"
+                android:focusable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
