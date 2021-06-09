@@ -72,15 +72,6 @@ public class MainFragment extends BrowseFragment {
     }
 
     private void setupEventListeners() {
-//        setOnSearchClickedListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), SearchActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
         setOnItemViewClickedListener(new ItemViewClickedListener());
     }
 

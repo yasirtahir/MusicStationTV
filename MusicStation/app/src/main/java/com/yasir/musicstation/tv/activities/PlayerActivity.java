@@ -95,35 +95,6 @@ public class PlayerActivity extends Activity {
         showLoader();
     }
 
-    private void handlePlayer(){
-        if (currentState == MediaPlayerHolder.PlayerState.PLAYING) {
-            pauseSong();
-        } else if (currentState == MediaPlayerHolder.PlayerState.PAUSED ||
-                currentState == MediaPlayerHolder.PlayerState.COMPLETED ||
-                currentState == MediaPlayerHolder.PlayerState.RESET) {
-            playSong();
-        }
-    }
-
-    private void setUI() {
-        if (song != null) {
-
-            txtSongName.setText(song.getSongName());
-            txtArtistName.setText(song.getArtistName());
-            txtCategoryName.setText(song.getCategoryName());
-
-            Glide.with(this)
-                    .load(song.getImageURL())
-                    .centerCrop()
-                    .circleCrop()
-                    .placeholder(R.drawable.app_icon)
-                    .error(R.drawable.app_icon)
-                    .into(imgIcon);
-        }
-
-        setupSeekBar();
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -215,6 +186,35 @@ public class PlayerActivity extends Activity {
     public void onBackPressed() {
         super.onBackPressed();
         hideLoader();
+    }
+
+    private void handlePlayer(){
+        if (currentState == MediaPlayerHolder.PlayerState.PLAYING) {
+            pauseSong();
+        } else if (currentState == MediaPlayerHolder.PlayerState.PAUSED ||
+                currentState == MediaPlayerHolder.PlayerState.COMPLETED ||
+                currentState == MediaPlayerHolder.PlayerState.RESET) {
+            playSong();
+        }
+    }
+
+    private void setUI() {
+        if (song != null) {
+
+            txtSongName.setText(song.getSongName());
+            txtArtistName.setText(song.getArtistName());
+            txtCategoryName.setText(song.getCategoryName());
+
+            Glide.with(this)
+                    .load(song.getImageURL())
+                    .centerCrop()
+                    .circleCrop()
+                    .placeholder(R.drawable.app_icon)
+                    .error(R.drawable.app_icon)
+                    .into(imgIcon);
+        }
+
+        setupSeekBar();
     }
 
     private void pauseSong() {

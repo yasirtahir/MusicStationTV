@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:keepScreenOn="true"
-    android:background="@color/main_background">
+    android:background="@color/main_background"
+    android:keepScreenOn="true">
 
     <ImageView
         android:id="@+id/imgBackground"
-        android:background="@color/main_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@color/main_background" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/splashAnimation"
@@ -25,10 +25,10 @@
         android:id="@+id/blastVisualizer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        custom:avDensity="0.8"
-        custom:avType="fill"
         custom:avColor="@color/light_red"
-        custom:avSpeed="normal"/>
+        custom:avDensity="0.8"
+        custom:avSpeed="normal"
+        custom:avType="fill" />
 
     <ImageView
         android:id="@+id/imgOverlay"
@@ -39,21 +39,21 @@
 
     <ProgressBar
         android:id="@+id/progressBarLoader"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:indeterminate="true"
-        android:visibility="gone"
-        android:indeterminateTintMode="src_atop"
         android:indeterminateTint="@color/colorPrimaryDark"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/rlContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:paddingStart="50dp"
-        android:paddingEnd="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:paddingEnd="50dp">
 
         <ImageView
             android:id="@+id/imgIcon"
@@ -63,11 +63,11 @@
         <TextView
             android:id="@+id/txtSongName"
             style="@style/TextViewStyle"
-            android:textSize="@dimen/title_text_size"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/imgIcon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgIcon"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/title_text_size" />
 
         <TextView
             android:id="@+id/txtArtistName"
@@ -91,11 +91,11 @@
             android:id="@+id/btnPlayPause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCategoryName"
             android:layout_marginTop="50dp"
-            android:focusable="true"
-            android:src="@drawable/lb_ic_play"
             android:background="@drawable/ui_selector_bg"
-            android:layout_below="@+id/txtCategoryName" />
+            android:focusable="true"
+            android:src="@drawable/lb_ic_play" />
 
         <SeekBar
             android:id="@+id/seekBarAudio"
@@ -104,11 +104,10 @@
             android:layout_below="@+id/btnPlayPause"
             android:layout_marginTop="10dp"
             android:background="@drawable/ui_selector_bg"
-            android:progressTint="@color/white"
-            android:thumbTint="@color/white"
             android:colorControlActivated="@color/white"
-            android:focusable="true"/>
-
+            android:focusable="true"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white" />
 
         <TextView
             android:id="@+id/txtTotalDuration"
@@ -127,8 +126,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/seekBarAudio"
-            android:layout_toStartOf="@+id/txtTotalDuration"
             android:layout_marginTop="5dp"
+            android:layout_toStartOf="@+id/txtTotalDuration"
             android:text="-"
             android:textSize="@dimen/time_text_size" />
 
@@ -136,46 +135,44 @@
 
     <RelativeLayout
         android:id="@+id/rlErrorLayout"
-        android:background="@color/background"
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:visibility="gone">
 
         <RelativeLayout
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
 
             <ImageView
                 android:id="@+id/imgErrorLoading"
-                android:src="@drawable/lb_ic_sad_cloud"
-                android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/lb_ic_sad_cloud" />
 
             <TextView
                 android:id="@+id/txtError"
                 style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgErrorLoading"
                 android:layout_centerHorizontal="true"
                 android:text="@string/error_message"
-                android:layout_below="@+id/imgErrorLoading"
-                android:textSize="@dimen/time_text_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="@dimen/time_text_size" />
 
             <Button
                 android:id="@+id/btnDismiss"
-                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/txtError"
                 android:layout_centerHorizontal="true"
-                android:text="@string/dismiss_error"
+                android:layout_marginTop="30dp"
                 android:focusable="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:text="@string/dismiss_error" />
 
         </RelativeLayout>
-
 
     </RelativeLayout>
 
