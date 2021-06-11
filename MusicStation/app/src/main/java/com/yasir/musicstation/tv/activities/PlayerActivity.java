@@ -14,14 +14,13 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.Target;
 import com.gauravk.audiovisualizer.visualizer.CircleLineVisualizer;
 import com.yasir.musicstation.tv.R;
 import com.yasir.musicstation.tv.models.Song;
 import com.yasir.musicstation.tv.player.LocalEventFromMainActivity;
 import com.yasir.musicstation.tv.player.LocalEventFromMediaPlayerHolder;
 import com.yasir.musicstation.tv.player.MediaPlayerHolder;
-import com.yasir.musicstation.tv.presenter.DataUtil;
+import com.yasir.musicstation.tv.utils.DataUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

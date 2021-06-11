@@ -21,7 +21,7 @@ import com.yasir.musicstation.tv.activities.PlayerActivity;
 import com.yasir.musicstation.tv.models.CategoryModel;
 import com.yasir.musicstation.tv.models.Song;
 import com.yasir.musicstation.tv.presenter.CardPresenter;
-import com.yasir.musicstation.tv.presenter.DataUtil;
+import com.yasir.musicstation.tv.utils.DataUtil;
 
 @SuppressWarnings("ALL")
 public class MainFragment extends BrowseFragment {

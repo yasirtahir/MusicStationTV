@@ -31,11 +31,13 @@ android {
             minifyEnabled false
             shrinkResources false
             signingConfig signingConfigs.release
+            buildConfigField "String", "API_URL", "\"https://iotdata.live/\""
         }
         release {
             minifyEnabled false
             shrinkResources false
             signingConfig signingConfigs.release
+            buildConfigField "String", "API_URL", "\"https://iotdata.live/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -60,4 +62,8 @@ dependencies {
     implementation ('com.github.bumptech.glide:okhttp3-integration:4.12.0'){
         exclude group: 'glide-parent'
     }
+    // Network libs
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'com.squareup.retrofit:retrofit:1.9.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
 }

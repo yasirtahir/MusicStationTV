@@ -1,4 +1,4 @@
-package com.yasir.musicstation.tv.presenter;
+package com.yasir.musicstation.tv.utils;
 
 import android.app.UiModeManager;
 import android.content.Context;

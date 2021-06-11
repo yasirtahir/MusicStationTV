@@ -4,6 +4,9 @@
     <string name="permission_denied">Some of the features will not work if you do not allow the required permissions</string>
     <string name="search_results">Search results for \'%1$s\'</string>
     <string name="no_search_results">No search results found for \'%1$s\'</string>
+    <string name="key_password" translatable="false">bQWqxOUUpVMaC35k</string>
+    <string name="aes" translatable="false">AES</string>
+    <string name="aes_padding" translatable="false">AES/ECB/PKCS5Padding</string>
     <!-- Error messages -->
     <string name="error_message">Unable to play this Song</string>
     <string name="dismiss_error">Dismiss</string>
